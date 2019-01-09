@@ -1,0 +1,236 @@
+@import '../base/reset';
+@import '../base/colors';
+@import '../base/variables';
+@import 'layout/extend';
+@import 'layout/mixin';
+
+body {
+    font-family: $font;
+    @include transition(all 0.7s ease);
+}
+
+#homePage {
+    background: url(../../assets/images/bg.jpg);
+    background-size: cover;
+    height: 100vh;
+    color: $white;
+
+    .overlay {
+        background-color: $overlay;
+        height: 100%;
+        top: 0;
+        width: 100%;
+        position: fixed;
+        left: 0;
+    }
+
+    #name {
+        padding: 50px 0px 550px 200px;
+        border: 1px solid $white;
+        @extend %homePage-div;
+        @include transform(rotate(410deg));
+        left: -230px;
+
+        .content {
+            @include transform(rotate(-410deg));
+
+            p {
+                font-size: 22px;
+                padding-bottom: 20px;
+            }
+    
+            h1 {
+                font-size: 40px;
+                padding-bottom: 10px;
+            }
+
+            .typed {
+                font-size: 26px;
+                text-transform: uppercase;
+            }
+    
+            button {
+                margin-top: 40px;
+                border-radius: 0px !important;
+                padding: 10px 25px !important;
+                position: relative;
+                z-index: 0;
+    
+                svg {
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .social-icons {
+            padding-top: 40px;
+
+            svg {
+                font-size: 14px;
+            }
+
+            .fb, .twitter {
+                @extend %social-icons;
+                @include transition(all 0.7s ease);
+
+                &:hover {
+                    @extend %socialIcon-hover;
+                }
+            }
+
+            .g-plus {
+                @extend %social-icons;
+                padding: 8px 12px 7px;
+                @include transition(all 0.7s ease);
+
+                &:hover {
+                    @extend %socialIcon-hover;
+                }
+            }
+        }
+    }
+
+    #menu {
+        position: relative;
+        left: 500px;
+        width: 63%;
+        height: 100vh;
+        @include transition(all 0.7s ease);
+
+        .resume, .portfolio, .blog, .contact {
+            @extend %menu;
+        }
+
+        .resume {
+            @extend %div;
+            width: 26%;
+            height: 25%;
+            top: -149px;
+            left: 317px;
+            @include transition(all 0.7s ease);
+            @include transform(rotate(320deg));
+
+            @extend %div-hover;
+
+            .content {
+                @include transform(rotate(-320deg));
+            }
+
+            a {
+                @extend %a;
+                top: 50px;
+                left: 50px;
+            
+                &::before {
+                    @extend %design;
+                    content: "01";
+                }
+            
+                &::after {
+                    @extend %design-border;
+                }
+            }
+        }
+
+        .portfolio {
+            @extend %div;
+            transform: rotate(-40deg);
+            width: 30% !important;
+            padding: 200px 80px !important;
+            top: 47px;
+            left: 535px;
+
+            @extend %div-hover;
+
+            .content {
+                @include transform(rotate(40deg));
+            }
+
+            a {
+                @extend %a;
+                top: 0px;
+                left: 0px;
+            
+                &::before {
+                    @extend %design;
+                    content: "02";
+                }
+            
+                &::after {
+                    @extend %design-border;
+                }
+            }
+        }
+
+        .blog {
+            @extend %div;
+            width: 30% !important;
+            height: 50%;
+            @include transform(rotate(-40deg));
+            top: 362px;
+            left: 769px;
+
+            @extend %div-hover;
+
+            .content {
+                @include transform(rotate(40deg));
+            }
+
+            a {
+                @extend %a;
+                top: 0px;
+                left: 0px;
+            
+                &::before {
+                    @extend %design;
+                    content: "03";
+                }
+            
+                &::after {
+                    @extend %design-border;
+                }
+            }
+        }
+
+        .contact {
+            @extend %div;
+            width: 37% !important;
+            left: 1000px;
+            transform: rotate(-40deg);
+
+            @extend %div-hover;
+
+            .content {
+                @include transform(rotate(40deg));
+            }
+
+            a {
+                @extend %a;
+                top: 40px;
+                left: 35px;
+            
+                &::before {
+                    @extend %design;
+                    content: "04";
+                }
+            
+                &::after {
+                    @extend %design-border;
+                }
+            }
+        }
+
+        a {
+            color: #fff;
+            font-size: 28px;
+            text-transform: uppercase;
+            @include transition(all 0.7s ease);
+
+            &:hover {
+                @include transition(all 0.7s ease);
+                text-decoration: none;
+            }
+        }
+
+    }
+}

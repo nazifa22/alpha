@@ -1,0 +1,86 @@
+@import '../base/_colors';
+@import '../base/_variables';
+@import '../layout/_mixin';
+
+%social-icons {
+    padding: 8px 10px 7px 15px;
+    border: 1px solid $white;
+    margin-right: 10px;
+}
+
+%socialIcon-hover {
+    background-color: #fff;
+    color: #000;
+    @include transition(all 0.7s ease);
+}
+
+%homePage-div {
+    height: 100vh;
+    position: fixed;
+    width: 50%;
+}
+
+%menu {
+    width: 50%;
+    border: 1px solid white;
+    padding: 147px 80px;
+    // display: inline-block;
+    // float: left;
+}
+
+%design {
+    content: "";
+    position: absolute;
+    @include transition(all 0.7s ease);
+    font-size: 14px;
+    top: -25px;
+    left: -20px;
+}
+
+%design-border {
+    content: "";
+    position: absolute;
+    @include transition(all 0.7s ease);
+    width: 65px;
+    height: 1px;
+    top: -5px;
+    left: -20px;
+    background-color: #fff;
+}
+
+%menu-item {
+    
+}
+
+%a {
+    position: absolute;
+    @include transition(all 0.7s ease);
+}
+
+%div {
+    position: fixed;
+    @include transition(all 0.7s ease);
+}
+
+%div-hover {
+    &:hover {
+        @include transition(all 0.7s ease);
+        outline: 15px solid rgba(255, 255, 255, 0.1);
+        outline-offset: -16px; 
+        
+        a {
+            &::before {
+                top: -0px;
+                left: -20px;
+                @include transition(all 0.7s ease);
+        
+            }
+        
+            &::after {
+                top: 18px;
+                left: -20px;
+                @include transition(all 0.7s ease);
+            }
+        }
+    }
+}
