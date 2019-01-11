@@ -49,15 +49,43 @@ body {
                 text-transform: uppercase;
             }
     
-            button {
+            .button {
                 margin-top: 40px;
                 border-radius: 0px !important;
                 padding: 10px 25px !important;
                 position: relative;
                 z-index: 0;
+                background-color: #1f1f1f !important;
+                border: none !important;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background-color: rgba(0, 0, 0, 0.1);
+                    width: 0px;
+                    height: 100%;
+                    top: 0px;
+                    right: -5px;
+                    z-index: -1;
+                    @include transform(skew(-13deg));
+                    @include transition(all 0.7s ease);
+                }
+
+                &:hover {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        background-color: rgba(0, 0, 0, 0.2);
+                        width: 59px;
+                        right: -5px;
+                        @include transform(skew(-13deg));
+                        @include transition(all 0.7s ease);
+                    }
+                }
     
                 svg {
                     margin-left: 10px;
+                    z-index: 0;
                 }
             }
         }
